@@ -1,0 +1,24 @@
+{
+  "name": "funcaption",
+  "version": "1.0.0",
+  "description": "AI-powered Instagram caption generator",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "13.5.6",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "@supabase/supabase-js": "^2.38.0",
+    "@google/generative-ai": "^0.1.3",
+    "razorpay": "^2.9.2"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.31",
+    "tailwindcss": "^3.3.5"
+  }
+}
