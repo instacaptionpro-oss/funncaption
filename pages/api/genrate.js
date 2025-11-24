@@ -67,7 +67,7 @@ Generate ${variants} unique Instagram captions for the following:
 
 Subject: ${subject}
 Mood/Tone: ${mood}
-${customNote ? Additional notes: ${customNote} : ''}
+${customNote ? 'Additional notes: ${customNote}' : ''}
 
 Requirements:
 - Creative and engaging
