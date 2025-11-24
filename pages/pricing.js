@@ -112,7 +112,7 @@ export default function Pricing() {
     return planPrice - currentPrice
   }
 
-  onst getCardStyle = (plan) => {
+  const getCardStyle = (plan) => {
   const isCurrentPlan = user?.plan?.toLowerCase() === plan.name.toLowerCase()
   
   let borderColor = '#E5E7EB'
