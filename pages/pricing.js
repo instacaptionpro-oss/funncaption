@@ -106,28 +106,31 @@ export default function Pricing() {
     }
   ]
 
-  const getPriceDifference = (planPrice) => {
+ const getPriceDifference = (planPrice) => {
     if (!user) return planPrice
     const currentPrice = plans.find(p => p.name.toLowerCase() === user.plan?.toLowerCase())?.price || 0
     return planPrice - currentPrice
   }
 
   const getCardStyle = (plan) => {
-  const isCurrentPlan = user?.plan?.toLowerCase() === plan.name.toLowerCase()
-  
-  let borderColor = '#E5E7EB'
-  if (plan.color === 'teal') borderColor = 'linear-gradient(135deg, #14B8A6, #0EA5E9)'
-  if (plan.color === 'purple') borderColor = 'linear-gradient(135deg, #8B5CF6, #EC4899)'
-  if (plan.color === 'gold') borderColor = 'linear-gradient(135deg, #F59E0B, #EF4444)'
-  
-  // FIX: Calculate scale separately first
-  const scaleValue = isCurrentPlan ? 0.9 : plan.scale
-  
-  return {
-    transform: `scale(${scaleValue})`,  // ← NOW CORRECT!
-    opacity: isCurrentPlan ? 0.85 : 1,
-    background: isCurrentPlan ? '#F9FAFB' : 'white',
+    const isCurrentPlan = user?.plan?.toLowerCase() === plan.name.toLowerCase()
     
+    let borderColor = '#E5E7EB'
+    if (plan.color === 'teal') borderColor = 'linear-gradient(135deg, #14B8A6, #0EA5E9)'
+    if (plan.color === 'purple') borderColor = 'linear-gradient(135deg, #8B5CF6, #EC4899)'
+    if (plan.color === 'gold') borderColor = 'linear-gradient(135deg, #F59E0B, #EF4444)'
+    
+    const scaleValue = isCurrentPlan ? 0.9 : plan.scale
+    
+    return {
+      transform: scale(${scaleValue}),
+      opacity: isCurrentPlan ? 0.85 : 1,
+      background: isCurrentPlan ? '#F9FAFB' : 'white',
+      border: plan.popular ? '3px solid' : '1px solid #E5E7EB',
+      borderImage: plan.popular ? borderColor : 'none',
+      boxShadow: plan.popular ? '0 8px 24px rgba(20, 184, 166, 0.3)' : 'none'
+    }
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
