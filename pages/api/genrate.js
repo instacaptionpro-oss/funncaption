@@ -77,7 +77,7 @@ Requirements:
 - Length: 100-150 characters
 - Match the ${mood} mood perfectly
 
-${vibe && vibeLines[vibe] ? \nIMPORTANT: Add this belonging line at the very end of each caption:\n"${vibeLines[vibe]}" : ''}
+${vibe && vibeLines[vibe] ? `\nIMPORTANT: Add this belonging line at the very end of each caption:\n"${vibeLines[vibe]}"` : ''}
 
 Return ONLY the captions as a JSON array. Format:
 ["caption 1", "caption 2", "caption 3"]
