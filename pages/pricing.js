@@ -113,7 +113,22 @@ export default function Pricing() {
   }
 
   const getCardStyle = (plan) => {
-    const isCurrentPlan = user?.plan?.toLowerCase() === plan.name.toLowerCase()
+  const isCurrentPlan = user?.plan?.toLowerCase() === plan.name.toLowerCase()
+  
+  let borderColor = '#E5E7EB'
+  if (plan.color === 'teal') borderColor = 'linear-gradient(135deg, #14B8A6, #0EA5E9)'
+  if (plan.color === 'purple') borderColor = 'linear-gradient(135deg, #8B5CF6, #EC4899)'
+  if (plan.color === 'gold') borderColor = 'linear-gradient(135deg, #F59E0B, #EF4444)'
+  
+  return {
+    transform: scale(${isCurrentPlan ? 0.9 : plan.scale}),  // ← THIS LINE WAS BROKEN
+    opacity: isCurrentPlan ? 0.85 : 1,
+    background: isCurrentPlan ? '#F9FAFB' : 'white',
+    border: plan.popular ? '3px solid' : '1px solid #E5E7EB',
+    borderImage: plan.popular ? borderColor : 'none',
+    boxShadow: plan.popular ? '0 8px 24px rgba(20, 184, 166, 0.3)' : 'none'
+  }
+}
     
     let borderColor = '#E5E7EB' // grey
     if (plan.color === 'teal') borderColor = 'linear-gradient(135deg, #14B8A6, #0EA5E9)'
