@@ -138,7 +138,7 @@ export default function Pricing() {
     if (plan.color === 'gold') borderColor = 'linear-gradient(135deg, #F59E0B, #EF4444)'
     
     return {
-      transform: scale(${isCurrentPlan ? 0.9 : plan.scale}),
+      transform: `scale(${isCurrentPlan ? 0.9 : plan.scale})`,
       opacity: isCurrentPlan ? 0.85 : 1,
       background: isCurrentPlan ? '#F9FAFB' : 'white',
       border: plan.popular ? '3px solid' : '1px solid #E5E7EB',
