@@ -124,7 +124,7 @@ export default function Pricing() {
   const scaleValue = isCurrentPlan ? 0.9 : plan.scale
   
   return {
-    transform: scale(${scaleValue}),  // ← NOW CORRECT!
+    transform: `scale(${scaleValue})`,  // ← NOW CORRECT!
     opacity: isCurrentPlan ? 0.85 : 1,
     background: isCurrentPlan ? '#F9FAFB' : 'white',
     border: plan.popular ? '3px solid' : '1px solid #E5E7EB',
